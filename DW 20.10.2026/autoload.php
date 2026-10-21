@@ -12,4 +12,3 @@ spl_autoload_register(function (string $classe): void {
         require $arquivo;
     }
 });
-

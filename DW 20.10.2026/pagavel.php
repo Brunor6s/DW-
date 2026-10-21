@@ -18,6 +18,14 @@ class Cartao implements Pagavel {
     }
 }
 
+class Boleto implements Pagavel {
+    public function pagar(float $valor): bool {
+        echo "Boleto de R$ $valor<br>";
+        echo "Codigo: " . rand(100000, 999999);
+        return true;
+    }
+}
+
 class ProdutoComDesconto extends ProdutoFisico {
     public $desconto;
 
