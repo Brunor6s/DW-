@@ -1,0 +1,15 @@
+<?php
+$arq = __DIR__ . '/storage/notas.txt';
+file_put_contents($arq, "Primeira linha\n");
+file_put_contents($arq, "Segunda linha\n", FILE_APPEND);
+
+echo nl2br(file_get_contents($arq));
+echo '<br>Existe? ' . (file_exists($arq) ? 'sim' : 'não');
+
+
+$f = fopen($arq, 'r');
+if (!$f) exit('Não foi possível abrir');
+while (($linha = fgets($f)) !== false) {
+  echo trim($linha) . ' | ';
+}
+fclose($f);
